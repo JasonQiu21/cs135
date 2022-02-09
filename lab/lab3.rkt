@@ -226,7 +226,7 @@
  |   (gen-fib 0 0 7) -> 0
  |
  | Additional examples for +2 points (each should compute in a second or less):
- |   (gen-fib 0 1 39)    -> 63245986
+ |   (gen-fib 0 1 39) asdfasdf   -> 63245986
  |   (gen-fib 2 1 52)    -> 73681302247
  |   (gen-fib 5 6 70)    -> 1730700096559780
  |   (gen-fib 15 -15 80) -> -134165914856871960
@@ -235,11 +235,15 @@
 ;; Type signature: (gen-fib int int nonnegative-int) -> int
 ;; 3 PTS (+2 potential PTS)
 (define (gen-fib a b n)
-  (cond
-    [(<= n 0) a]
-    [(= n 1) b]
-    [(> n 1) (+ (gen-fib a b (- n 2)) (gen-fib a b (- n 1)))] 
-  )
+    (cond
+      [(<= n 0) a]
+      [else (gen-fib b (+ b a) (- n 1))]
+    )
+    ; (cond
+    ; [(<= n 0) a]
+    ; [(= n 1) b]
+    ; [(> n 1) (+ (gen-fib a b (- n 2)) (gen-fib a b (- n 1)))] 
+    ; )
 )
 
 
