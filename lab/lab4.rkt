@@ -229,7 +229,7 @@
       (define head (car S))
       (define tail (cdr S))
       (define lose-it (powerset tail))
-      (define use-it (cons_each head (powerset tail)))
+      (define use-it (cons_each head lose-it))
       (cat lose-it use-it)
     ]
   )
